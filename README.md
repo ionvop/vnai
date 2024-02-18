@@ -1,2 +1,2 @@
 # vnai
-A simple AI-assisted dialogue story creator web app
+A simple AI-assisted dialogue-based story creator web app
