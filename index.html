@@ -253,12 +253,14 @@
                 if (element.getAttribute("data-stretch") != "yes") {
                     element.setAttribute("data-stretch", "yes");
                     element.style.resize = "none";
+                    element.style.overflowY = "hidden";
                     element.style.height = "auto";
                     element.style.height = ((element.scrollHeight > 100) ? element.scrollHeight : 100) + "px";
 
                     element.oninput = () => {
                         element.style.height = "auto";
                         element.style.height = ((element.scrollHeight > 100) ? element.scrollHeight : 100) + "px";
+                        element.scrollIntoView(false);
                     }
                 }
             }
