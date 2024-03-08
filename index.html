@@ -54,87 +54,14 @@
             .content__pages__general__description__input {
                 padding: 1rem;
             }
-            
-            .content__pages__general__save {
-                padding: 1rem;
-            }
 
-            .content__pages__characters__render .item__name {
-                display: grid;
-                grid-template-columns: max-content 1fr max-content;
-            }
-
-            .content__pages__characters__render .item__name__label {
-                padding: 1rem;
-            }
-
-            .content__pages__characters__render .item__name__delete {
-                padding: 1rem;
-            }
-
-            .content__pages__characters__render .item__name__input {
-                padding: 1rem;
-            }
-
-            .content__pages__characters__render .item__description {
-                padding: 1rem;
-            }
-
-            .content__pages__characters__render .item__description__label {
-                padding: 1rem;
-            }
-
-            .content__pages__characters__render .item__description__input {
-                padding: 1rem;
-            }
-
-            .content__pages__characters__buttons {
-                display: grid;
-                grid-template-columns: 1fr max-content max-content max-content 1fr;
-            }
-
-            .content__pages__characters__buttons__generate {
-                padding: 1rem;
-            }
-
-            .content__pages__characters__buttons__add {
-                padding: 1rem;
-            }
-
-            .content__pages__characters__buttons__save {
-                padding: 1rem;
-            }
-
-            .content__pages__story__render {
-                max-height: 99vh;
-                overflow-y: auto;
-                overscroll-behavior-y: none;
-            }
-
-            .content__pages__story__render .item__details {
-                display: grid;
-                grid-template-columns: 1fr max-content max-content;
-            }
-
-            .content__pages__story__render .item__details__name {
-                padding: 1rem;
-            }
-
-            .content__pages__story__render .item__details__insert {
-                padding: 1rem;
-            }
-
-            .content__pages__story__render .item__details__delete {
-                padding: 1rem;
-            }
-
-            .content__pages__story__render .item__message {
+            .content__pages__story__content {
                 padding: 1rem;
             }
 
             .content__pages__story__new {
                 display: grid;
-                grid-template-columns: 1fr max-content max-content;
+                grid-template-columns: 1fr max-content;
             }
 
             .content__pages__story__new__input {
@@ -145,11 +72,27 @@
                 padding: 1rem;
             }
 
-            .content__pages__story__new__add {
+            .content__pages__settings__url {
                 padding: 1rem;
             }
 
-            .content__pages__story__save {
+            .content__pages__settings__url__label {
+                padding: 1rem;
+            }
+
+            .content__pages__settings__url__input {
+                padding: 1rem;
+            }
+
+            .content__pages__settings__model {
+                padding: 1rem;
+            }
+
+            .content__pages__settings__model__label {
+                padding: 1rem;
+            }
+
+            .content__pages__settings__model__input {
                 padding: 1rem;
             }
 
@@ -165,16 +108,7 @@
                 padding: 1rem;
             }
 
-            .content__pages__settings__buttons {
-                display: grid;
-                grid-template-columns: 1fr max-content max-content 1fr;
-            }
-
-            .content__pages__settings__buttons__new {
-                padding: 1rem;
-            }
-
-            .content__pages__settings__buttons__save {
+            .content__pages__settings__clear {
                 padding: 1rem;
             }
 
@@ -201,16 +135,13 @@
             </div>
             <div class="content">
                 <div class="content__tabs">
-                    <div class="content__tabs__general content__tab" onclick="btnSetPage(this)" value="general">
+                    <div class="content__tabs__general content__tab" onclick="btnSetPage(this)" data-page="general">
                         General
                     </div>
-                    <div class="content__tabs__characters content__tab" onclick="btnSetPage(this)" value="characters">
-                        Characters
-                    </div>
-                    <div class="content__tabs__story content__tab" onclick="btnSetPage(this)" value="story">
+                    <div class="content__tabs__story content__tab" onclick="btnSetPage(this)" data-page="story">
                         Story
                     </div>
-                    <div class="content__tabs__settings content__tab" onclick="btnSetPage(this)" value="settings">
+                    <div class="content__tabs__settings content__tab" onclick="btnSetPage(this)" data-page="settings">
                         Settings
                     </div>
                 </div>
@@ -232,103 +163,39 @@
                                 <textarea class="-textarea -script__textarea" placeholder="Enter a description..."></textarea>
                             </div>
                         </div>
-                        <div class="content__pages__general__save -center">
-                            <button class="-button" onclick="btnSaveGeneral(this)">
-                                Save
-                            </button>
-                        </div>
-                    </div>
-                    <div class="content__pages__characters content__page">
-                        <div class="content__pages__characters__render">
-                            <div class="item">
-                                <div class="item__name">
-                                    <div class="item__name__label">
-                                        Name:
-                                    </div>
-                                    <div class="item__name__input">
-                                        <input class="-input">
-                                    </div>
-                                    <div class="item__name__delete">
-                                        <button class="-button" onclick="btnDeleteCharacter(this)">
-                                            Delete
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="item__description">
-                                    <div class="item__description__label">
-                                        Description:
-                                    </div>
-                                    <div class="item__description__input">
-                                        <textarea class="-textarea -script__textarea"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="content__pages__characters__buttons -center">
-                            <div></div>
-                            <div class="content__pages__characters__buttons__generate">
-                                <button class="-button" onclick="btnGenerateCharacter(this)">
-                                    Generate
-                                </button>
-                            </div>
-                            <div class="content__pages__characters__buttons__add">
-                                <button class="-button" onclick="btnAddCharacter(this)">
-                                    Add
-                                </button>
-                            </div>
-                            <div class="content__pages__characters__buttons__save">
-                                <button class="-button" onclick="btnSaveCharacters(this)">
-                                    Save
-                                </button>
-                            </div>
-                            <div></div>
-                        </div>
                     </div>
                     <div class="content__pages__story content__page">
-                        <div class="content__pages__story__render">
-                            <div class="item">
-                                <div class="item__details">
-                                    <div class="item__details__name">
-                                        <input class="-input">
-                                    </div>
-                                    <div class="item__details__insert">
-                                        <button class="-button" onclick="btnInsertStory(this)">
-                                            Insert
-                                        </button>
-                                    </div>
-                                    <div class="item__details__delete">
-                                        <button class="-button" onclick="btnDeleteStory(this)">
-                                            Delete
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="item__message">
-                                    <textarea class="-textarea -script__textarea"></textarea>
-                                </div>
-                            </div>
+                        <div class="content__pages__story__content">
+                            <textarea class="-textarea -script__textarea" placeholder="Enter content of the story..."></textarea>
                         </div>
                         <div class="content__pages__story__new">
                             <div class="content__pages__story__new__input">
-                                <textarea class="-textarea -script__textarea" placeholder="Enter a context for the next reply..."></textarea>
+                                <textarea class="-textarea -script__textarea" placeholder="Enter context for the continuation..."></textarea>
                             </div>
-                            <div class="content__pages__story__new__generate">
+                            <div class="content__pages__story__new__generate -center--flex">
                                 <button class="-button" onclick="btnGenerateStory(this)">
                                     Generate
                                 </button>
                             </div>
-                            <div class="content__pages__story__new__add">
-                                <button class="-button" onclick="btnAddStory(this)">
-                                    Add
-                                </button>
-                            </div>
-                        </div>
-                        <div class="content__pages__story__save -center">
-                            <button class="-button" onclick="btnSaveStory(this)">
-                                Save
-                            </button>
                         </div>
                     </div>
                     <div class="content__pages__settings content__page">
+                        <div class="content__pages__settings__url">
+                            <div class="content__pages__settings__url__label">
+                                OpenAI Base URL:
+                            </div>
+                            <div class="content__pages__settings__url__input">
+                                <input class="-input">
+                            </div>
+                        </div>
+                        <div class="content__pages__settings__model">
+                            <div class="content__pages__settings__model__label">
+                                OpenAI Model:
+                            </div>
+                            <div class="content__pages__settings__model__input">
+                                <input class="-input">
+                            </div>
+                        </div>
                         <div class="content__pages__settings__apikey">
                             <div class="content__pages__settings__apikey__label">
                                 OpenAI Api Key:
@@ -337,19 +204,10 @@
                                 <input class="-input">
                             </div>
                         </div>
-                        <div class="content__pages__settings__buttons -center">
-                            <div></div>
-                            <div class="content__pages__settings__buttons__new">
-                                <button class="-button" onclick="btnNewStory(this)">
-                                    New Story
-                                </button>
-                            </div>
-                            <div class="content__pages__settings__buttons__save">
-                                <button class="-button" onclick="btnSaveSettings(this)">
-                                    Save
-                                </button>
-                            </div>
-                            <div></div>
+                        <div class="content__pages__settings__clear -center">
+                            <button class="-button" onclick="btnClear(this)">
+                                Clear Data
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -358,19 +216,15 @@
     </body>
     <script src="script.js"></script>
     <script>
-        let templates = {
-            character: document.querySelector(".content__pages__characters__render").innerHTML,
-            story: document.querySelector(".content__pages__story__render").innerHTML
-        }
-
         let data = localStorage.getItem("vnai__data");
 
         if (data == null) {
             data = {
                 title: "",
                 description: "",
-                characters: [],
-                story: [],
+                story: "",
+                baseurl: "",
+                model: "",
                 apikey: ""
             }
 
@@ -394,126 +248,81 @@
             }
         }
 
+        setInterval(() => {
+            for (let element of document.querySelectorAll(".-script__textarea")) {
+                if (element.getAttribute("data-stretch") != "yes") {
+                    element.setAttribute("data-stretch", "yes");
+                    element.style.resize = "none";
+                    element.style.height = "auto";
+                    element.style.height = ((element.scrollHeight > 100) ? element.scrollHeight : 100) + "px";
+
+                    element.oninput = () => {
+                        element.style.height = "auto";
+                        element.style.height = ((element.scrollHeight > 100) ? element.scrollHeight : 100) + "px";
+                    }
+                }
+            }
+        }, 100);
+
         function saveData() {
             localStorage.setItem("vnai__data", JSON.stringify(data));
         }
 
-        function updateData() {
+        function updateData() {  
             data.title = document.querySelector(".content__pages__general__title__input > input").value;
             data.description = document.querySelector(".content__pages__general__description__input > textarea").value;
-            data.characters = [];
-
-            for (element of document.querySelectorAll(".content__pages__characters__render > .item")) {
-                data.characters.push({
-                    name: element.querySelector(".item__name__input > input").value,
-                    description: element.querySelector(".item__description__input > textarea").value
-                })
-            }
-
-            data.story = [];
-
-            for (element of document.querySelectorAll(".content__pages__story__render > .item")) {
-                data.story.push({
-                    name: element.querySelector(".item__details__name > input").value,
-                    message: element.querySelector(".item__message > textarea").value
-                })
-            }
-
+            data.story = document.querySelector(".content__pages__story__content > textarea").value;
+            data.baseurl = document.querySelector(".content__pages__settings__url__input > input").value;
+            data.model = document.querySelector(".content__pages__settings__model__input > input").value;
             data.apikey = document.querySelector(".content__pages__settings__apikey__input > input").value;
+            saveData();
         }
 
         function updateContent() {
-            data = JSON.parse(localStorage.getItem("vnai__data"));
             document.querySelector(".content__pages__general__title__input > input").value = data.title;
             document.querySelector(".content__pages__general__description__input > textarea").value = data.description;
-            document.querySelector(".content__pages__characters__render").innerHTML = "";
-
-            for (let element of data.characters) {
-                let item = document.createElement("div");
-                item.innerHTML = templates.character;
-                item = item.querySelector(".item");
-                item.querySelector(".item__name__input > input").value = element.name;
-                item.querySelector(".item__description__input > textarea").value = element.description;
-                document.querySelector(".content__pages__characters__render").appendChild(item);
-            }
-
-            document.querySelector(".content__pages__story__render").innerHTML = "";
-
-            for (let element of data.story) {
-                let item = document.createElement("div");
-                item.innerHTML = templates.story;
-                item = item.querySelector(".item");
-                item.querySelector(".item__details__name > input").value = element.name;
-                item.querySelector(".item__message > textarea").value = element.message;
-                document.querySelector(".content__pages__story__render").appendChild(item);
-            }
-
+            document.querySelector(".content__pages__story__content > textarea").value = data.story;
+            document.querySelector(".content__pages__settings__url__input > input").value = data.baseurl;
+            document.querySelector(".content__pages__settings__model__input > input").value = data.model;
             document.querySelector(".content__pages__settings__apikey__input > input").value = data.apikey;
-
-            for (let element of document.querySelectorAll(".-script__textarea")) {
-                element.style.resize = "none";
-                element.style.height = "auto";
-                element.style.height = (element.scrollHeight) + "px";
-
-                element.oninput = () => {
-                    element.style.height = "auto";
-                    element.style.height = (element.scrollHeight) + "px";
-                }
-            }
         }
 
         function btnSave(element) {
             updateData();
             saveData();
 
-            let saveData = {
+            let save = {
                 title: data.title,
                 description: data.description,
-                characters: data.characters,
                 story: data.story
             }
 
-            saveJSONToFile(saveData, getCurrentDateTime());
+            saveJSONToFile(save, getCurrentDateTime());
         }
 
         function btnLoad(element) {
             readJSONFile((res) => {
-                data = {
-                    title: res.title,
-                    description: res.description,
-                    characters: res.characters,
-                    story: res.story,
-                    apikey: data.apikey
-                }
-
+                data.title = res.title;
+                data.description = res.description;
+                data.story = res.story;
                 saveData();
-                location.reload();
+                updateContent();
             })
         }
 
         function btnSetPage(element) {
             updateData();
 
-            if (JSON.stringify(data) != localStorage.getItem("vnai__data")) {
-                if (confirm("You have unsaved changes. Continue?") == false) {
-                    return;
-                }
-            }
-
             for (let element2 of document.querySelectorAll(".content__page")) {
                 element2.style.display = "none";
             }
 
-            switch (element.getAttribute("value")) {
+            switch (element.getAttribute("data-page")) {
                 case "general":
                     document.querySelector(".content__pages__general").style.display = "";
                     break;
-                case "characters":
-                    document.querySelector(".content__pages__characters").style.display = "";
-                    break;
                 case "story":
                     document.querySelector(".content__pages__story").style.display = "";
-                    document.querySelector(".content__pages__story__render").scrollTop = document.querySelector(".content__pages__story__render").scrollHeight;
                     break;
                 case "settings":
                     document.querySelector(".content__pages__settings").style.display = "";
@@ -523,118 +332,24 @@
             updateContent();
         }
 
-        function btnSaveGeneral(element) {
-            updateData();
-            saveData();
-            alert("Successfully saved!");
-        }
-
-        function btnDeleteCharacter(element) {
-            element.parentElement.parentElement.parentElement.remove();
-        }
-
-        function btnAddCharacter(element) {
-            let item = document.createElement("div");
-            item.innerHTML = templates.character;
-            item = item.querySelector(".item");
-            document.querySelector(".content__pages__characters__render").appendChild(item);
-        }
-
-        function btnSaveCharacters(element) {
-            updateData();
-            saveData();
-            alert("Successfully saved!");
-        }
-
-        function btnInsertStory(element) {
-            element = element.parentElement.parentElement.parentElement;
-            let item = document.createElement("div");
-            item.innerHTML = templates.story;
-            item = item.querySelector(".item");
-            element.parentElement.insertBefore(item, element);
-        }
-
-        function btnDeleteStory(element) {
-            element.parentElement.parentElement.parentElement.remove();
-        }
-
-        function btnAddStory(element) {
-            let item = document.createElement("div");
-            item.innerHTML = templates.story;
-            item = item.querySelector(".item");
-            document.querySelector(".content__pages__story__render").appendChild(item);
-        }
-
-        function btnSaveStory(element) {
-            updateData();
-            saveData();
-            alert("Successfully saved!");
-        }
-
-        function btnSaveSettings(element) {
-            updateData();
-            saveData();
-            alert("Successfully saved!");
-        }
-
         function btnGenerateStory(element) {
             document.querySelector(".content__pages__story__new__generate").style.visibility = "hidden";
             updateData();
 
-            let characterNames = [];
-
-            for (let element of data.characters) {
-                characterNames.push(element.name);
-            }
-
-            let functionCall = {
-                type: "function",
-                function: {
-                    name: "generate_message",
-                    description: "Generate a message",
-                    parameters: {
-                        type: "object",
-                        required: ["name", "message"],
-                        properties: {
-                            name: {
-                                type: "string",
-                                description: "The name of the character",
-                                enum: characterNames
-                            },
-                            message: {
-                                type: "string",
-                                description: "The message of the character"
-                            }
-                        }
-                    }
-                }
-            }
-
             let content = "TITLE:\n\n" + data.title + "\n\n\n\n";
             content += "DESCRIPTION:\n\n" + data.description + "\n\n\n\n";
-            content += "CHARACTERS:\n\n";
-
-            for (let element of data.characters) {
-                content += "Name:\n" + element.name + "\n\n";
-                content += "Description:\n" + element.description + "\n\n\n";
-            }
-
-            content += "\nSTORY:\n\n";
-            
-            for (let element of data.story) {
-                content += element.name + ": " + element.message + "\n\n";
-            }
+            content += "STORY:\n\n" + data.story + "\n\n\n\n";
 
             if (document.querySelector(".content__pages__story__new__input > textarea").value.length > 1) {
-                content += "\n\nGenerate the next reply based on the following context:\n\n" + document.querySelector(".content__pages__story__new__input > textarea").value;
+                content += "Continue the story based on the following context:\n\n" + document.querySelector(".content__pages__story__new__input > textarea").value;
             } else {
-                content += "\n\nGenerate the next reply";
+                content += "Continue the story";
             }
 
             let history = [
                 {
                     role: "system",
-                    content: "You will generate the next reply of a character based on the given context"
+                    content: "Generate a short continuation of the story based on the given prompt."
                 },
                 {
                     role: "user",
@@ -643,160 +358,40 @@
             ]
 
             console.log({
-                model: "gpt-3.5-turbo",
-                messages: history,
-                tools: [functionCall],
-                tool_choice: {
-                    type: "function",
-                    function: {
-                        name: "generate_message"
-                    }
-                }
+                url: data.baseurl + "/chat/completions",
+                model: data.model,
+                messages: history
             })
 
-            fetch("https://api.openai.com/v1/chat/completions", {
+            fetch(data.baseurl + "/chat/completions", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                     Authorization: "Bearer " + data.apikey
                 },
                 body: JSON.stringify({
-                    model: "gpt-3.5-turbo",
-                    messages: history,
-                    tools: [functionCall],
-                    tool_choice: {
-                        type: "function",
-                        function: {
-                            name: "generate_message"
-                        }
-                    }
+                    model: data.model,
+                    messages: history
                 })
             }).then(res => res.json()).then(
                 res => {
                     console.log(res);
-                    res = JSON.parse(res.choices[0].message.tool_calls[0].function.arguments);
-                    let item = document.createElement("div");
-                    item.innerHTML = templates.story;
-                    item = item.querySelector(".item");
-                    item.querySelector(".item__details__name > input").value = res.name;
-                    item.querySelector(".item__message > textarea").value = res.message;
-                    document.querySelector(".content__pages__story__render").appendChild(item);
-                    document.querySelector(".content__pages__story__render").scrollTop = document.querySelector(".content__pages__story__render").scrollHeight;
+                    document.querySelector(".content__pages__story__content > textarea").value += res.choices[0].message.content;
                     document.querySelector(".content__pages__story__new__generate").style.visibility = "";
                 }
             )
         }
 
-        function btnGenerateCharacter(element) {
-            document.querySelector(".content__pages__characters__buttons__generate").style.visibility = "hidden";
-            updateData();
-
-            let functionCall = {
-                type: "function",
-                function: {
-                    name: "generate_character",
-                    description: "Generate a character",
-                    parameters: {
-                        type: "object",
-                        required: ["name", "description"],
-                        properties: {
-                            name: {
-                                type: "string",
-                                description: "The name of the character"
-                            },
-                            description: {
-                                type: "string",
-                                description: "The description of the character"
-                            }
-                        }
-                    }
-                }
-            }
-
-            let content = "TITLE:\n\n" + data.title + "\n\n\n\n";
-            content += "DESCRIPTION:\n\n" + data.description + "\n\n\n\n";
-            content += "CHARACTERS:\n\n";
-
-            for (let element of data.characters) {
-                content += "Name:\n" + element.name + "\n\n";
-                content += "Description:\n" + element.description + "\n\n\n";
-            }
-
-            content += "\nSTORY:\n\n";
-            
-            for (let element of data.story) {
-                content += element.name + ": " + element.message + "\n\n";
-            }
-
-            content += "\n\nIf the story involves a character that has not yet been listen in the character list, then add that character"
-
-            let history = [
-                {
-                    role: "system",
-                    content: "You will generate a character that best fits on the given context"
-                },
-                {
-                    role: "user",
-                    content: content
-                }
-            ]
-
-            console.log({
-                model: "gpt-3.5-turbo",
-                messages: history,
-                tools: [functionCall],
-                tool_choice: {
-                    type: "function",
-                    function: {
-                        name: "generate_character"
-                    }
-                }
-            })
-
-            fetch("https://api.openai.com/v1/chat/completions", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: "Bearer " + data.apikey
-                },
-                body: JSON.stringify({
-                    model: "gpt-3.5-turbo",
-                    messages: history,
-                    tools: [functionCall],
-                    tool_choice: {
-                        type: "function",
-                        function: {
-                            name: "generate_character"
-                        }
-                    }
-                })
-            }).then(res => res.json()).then(
-                res => {
-                    console.log(res);
-                    res = JSON.parse(res.choices[0].message.tool_calls[0].function.arguments);
-                    let item = document.createElement("div");
-                    item.innerHTML = templates.character;
-                    item = item.querySelector(".item");
-                    item.querySelector(".item__name__input > input").value = res.name;
-                    item.querySelector(".item__description__input > textarea").value = res.description;
-                    document.querySelector(".content__pages__characters__render").appendChild(item);
-                    document.querySelector(".content__pages__characters__render").scrollTop = document.querySelector(".content__pages__characters__render").scrollHeight;
-                    document.querySelector(".content__pages__characters__buttons__generate").style.visibility = "";
-                }
-            )
-        }
-
-        function btnNewStory(element) {
+        function btnClear(element) {
             if (confirm("This will RESET everything. Any unsaved data will be LOST. Continue?") == false) {
                 return;
             }
 
             data.title = "";
             data.description = "";
-            data.characters = [];
-            data.story = [];
+            data.story = "";
             saveData();
-            location.reload();
+            updateContent();
         }
     </script>
 </html>
